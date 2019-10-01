@@ -2,8 +2,11 @@
 /**
  * Get IP 4.
  * 
- * @package Enevinel
+ * @license https://opensource.org/licenses/MIT MIT
  * @author Lenivene Bezerra <lenivene@msn.com>
+ * 
+ * @version 1.0
+ * @package Enevinel\IP4
  */
 
 final class IP4{
@@ -38,7 +41,7 @@ final class IP4{
 	public $ip = null;
 	public $cloudflare_ip = null;
 
-  /**
+	/**
 	 * The single instance of the class.
 	 *
 	 * @var IP4
@@ -67,12 +70,12 @@ final class IP4{
 	 */
 	public function __construct() {
 		$this->__request_ip();
-	}
+    }
 
-	/**
-	 * Get IP
-	 */
-	public function get(){
+    /**
+     * Get IP
+     */
+    public function get(){
 		if( $this->is_cloudflare() ) {
 			$this->ip = $_SERVER['HTTP_CF_CONNECTING_IP'];
 			$this->cloudflare_ip = $this->ip;
