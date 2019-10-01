@@ -16,21 +16,21 @@ final class IP4{
 	 * @var array IP/range
 	 */
 	public $list = array(
-        '199.27.128.0/21',
-        '173.245.48.0/20',
-        '103.21.244.0/22',
-        '103.22.200.0/22',
-        '103.31.4.0/22',
-        '141.101.64.0/18',
-        '108.162.192.0/18',
-        '190.93.240.0/20',
-        '188.114.96.0/20',
-        '197.234.240.0/22',
-        '198.41.128.0/17',
-        '162.158.0.0/15',
-        '104.16.0.0/12',
-        '172.64.0.0/13',
-        '131.0.72.0/22'
+		'199.27.128.0/21',
+		'173.245.48.0/20',
+		'103.21.244.0/22',
+		'103.22.200.0/22',
+		'103.31.4.0/22',
+		'141.101.64.0/18',
+		'108.162.192.0/18',
+		'190.93.240.0/20',
+		'188.114.96.0/20',
+		'197.234.240.0/22',
+		'198.41.128.0/17',
+		'162.158.0.0/15',
+		'104.16.0.0/12',
+		'172.64.0.0/13',
+		'131.0.72.0/22'
 	);
 
 	/**
@@ -39,7 +39,7 @@ final class IP4{
 	public $ip = null;
 	public $cloudflare_ip = null;
 
-    /**
+  /**
 	 * The single instance of the class.
 	 *
 	 * @var IP4
@@ -58,7 +58,7 @@ final class IP4{
 	public static function instance() {
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self();
-        }
+		}
 
 		return self::$_instance;
 	}
@@ -67,13 +67,13 @@ final class IP4{
 	 * IP4 Constructor.
 	 */
 	public function __construct() {
-        $this->__request_ip();
-    }
+		$this->__request_ip();
+	}
 
-    /**
-     * Get IP
-     */
-    public function get(){
+	/**
+	 * Get IP
+	 */
+	public function get(){
 		if( $this->is_cloudflare() ) {
 			$this->ip = $_SERVER['HTTP_CF_CONNECTING_IP'];
 			$this->cloudflare_ip = $this->ip;
@@ -234,7 +234,7 @@ final class IP4{
 		else{
 			$this->ip = $_SERVER['REMOTE_ADDR'];
 		}
-	
+
 		return (string) $this->ip;
 	}
 }
