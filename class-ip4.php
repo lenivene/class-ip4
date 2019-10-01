@@ -7,7 +7,6 @@
  */
 
 final class IP4{
-
 	/**
 	 * List IP Ranges
 	 * 
